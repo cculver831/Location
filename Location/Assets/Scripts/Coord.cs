@@ -19,4 +19,17 @@ public class Coord
     {
         return "(" + X + " , " + Y + ", " + Z + ")";
     }
+    static public void DrawPoint(Coord position, float width, Color color)
+    {
+        GameObject line = new GameObject("Point_" + position.ToString());
+        LineRenderer lineRenderer = line.AddComponent<LineRenderer>();
+        lineRenderer.material = new Material(Shader.Find("Unlit/Color"));
+        lineRenderer.material.color = color;
+        lineRenderer.positionCount = 2; //sets # of vertices (lines only need two)
+        lineRenderer.SetPosition(0, new Vector3(position.X - width / 3.0f, position.Y - width / 3.0f,position.Z));
+        lineRenderer.SetPosition(1, new Vector3(position.X + width / 3.0f, position.Y + width / 3.0f, position.Z));
+        lineRenderer.startWidth = width;
+        lineRenderer.endWidth = width;
+
+    }
 }
