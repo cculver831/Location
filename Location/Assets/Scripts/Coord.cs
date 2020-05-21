@@ -32,4 +32,17 @@ public class Coord
         lineRenderer.endWidth = width;
 
     }
+
+    static public void DrawLine(Coord startPos,Coord endPos, float width, Color color)
+    {
+        GameObject line = new GameObject("Point_" + startPos.ToString());
+        LineRenderer lineRenderer = line.AddComponent<LineRenderer>();
+        lineRenderer.material = new Material(Shader.Find("Unlit/Color"));
+        lineRenderer.material.color = color;
+        lineRenderer.positionCount = 2; //sets # of vertices (lines only need two)
+        lineRenderer.SetPosition(0, new Vector3(startPos.X, startPos.Y, startPos.Z));
+        lineRenderer.SetPosition(1, new Vector3(endPos.X,endPos.Y, endPos.Z));
+        lineRenderer.startWidth = width;
+        lineRenderer.endWidth = width;
+    }
 }
