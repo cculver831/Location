@@ -5,7 +5,7 @@ using UnityEngine;
 public class DrawLine : MonoBehaviour
 {
 
-    Coord point = new Coord(10, 1);
+    //Coord point = new Coord(10, 1); //test point
 
     //draw axis
     Coord startpoint = new Coord(0, 100);
@@ -15,15 +15,9 @@ public class DrawLine : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(point.ToString());
-        Coord.DrawPoint(point, 2, Color.green);
         Coord.DrawLine(startpoint, endPoint, 2, Color.yellow);
         Coord.DrawLine(startpointx, endPointx, 2, Color.yellow);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-         
-    }
+
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
 {
-    public Transform player; //
+    public Transform player; //takes in player Gameobject for camera to follow
 
     // Start is called before the first frame update
     void Start()
